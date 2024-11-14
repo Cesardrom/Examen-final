@@ -1,3 +1,4 @@
+
 import { IPokemon, Pokemon } from './pokemon';
 
 class PokemonTrainer {
@@ -34,7 +35,7 @@ class PokemonTrainer {
     private populatePokemonList(): void {
         const select = $('#pokemon-list');
         this.pokemons.forEach(pokemon => {
-            select.append(`<option value="${pokemon.id}"   ${pokemon.name}</option>`);
+            select.append(`<option value="${pokemon.id}">${pokemon.name}</option>`);
         });
     }
     
@@ -81,9 +82,9 @@ class PokemonTrainer {
           console.error('Error updating Pokemon data:', error);
           alert('Failed to update Pokémon data.');
         }
-    }
+      }
 };
 
-
-
-export {};
+$(document).ready(() => {
+    new PokemonTrainer();
+});
